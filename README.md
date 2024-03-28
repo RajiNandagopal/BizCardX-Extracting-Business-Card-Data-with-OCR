@@ -21,7 +21,7 @@ Features:
 BizCardX to simplify the process of extracting and managing information from business cards. The tool offers the following features:
 
 1.Extraction of key information from business cards: company name, cardholder name, designation, contact details, etc.
-2.Storage of extracted data in a MySQL database for easy access and retrieval.
+2.Storage of extracted data in a SQL database for easy access and retrieval.
 3.GUI built with Streamlit for a user-friendly interface.
 4.User options to upload, extract, and modify business card data.
 
@@ -32,10 +32,10 @@ Workflow:
 3.The web application opens in a browser, presenting the user with three menu options: HOME, DATA MANAGEMENT, MODIFY.
 4.Users can upload a business card image in the DATA MANAGEMENT menu to INSERT option.
 5.The EasyOCR library extracts text from the uploaded image.
-6.Extracted text is classified using regular expressions to identify key information such as company name, cardholder name, etc.
-7.The classified data is displayed on the screen and can be edited by the user if needed.
-8.Clicking the "Upload to Database" button stores the data in a MySQL database.
-9.The MODIFY menu allows users to read, update, and delete data in the MySQL database.
+6.Clicking the "Extract" button stores the data in a SQL database.
+7.Extracted text is classified using regular expressions to identify key information such as company name, cardholder name, etc.
+8.The classified data is displayed on the screen and can be edited by the user if needed.
+9.The Data Management menu allows users to read, update, and delete data in the SQL database.
 
 Conclusion:
 
