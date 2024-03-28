@@ -1,4 +1,3 @@
-#%%writefile sy.py
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -40,7 +39,7 @@ st.set_page_config(page_title= "BizCardX", page_icon=':credit_card:', layout='wi
 # Create a sidebar menu with options to Add, Show, Update business card information
 
 with st.sidebar:
-    selected = option_menu("Menu", ["🏡Home","🌏Data Management","🙏My-Profile"],
+    selected = option_menu("Menu", ["🏡Home","🌏Data Management","🙏 About"],
                           #icons=["","",""],
                           default_index=0,
                           orientation="vertical",
@@ -51,23 +50,13 @@ with st.sidebar:
     
 
 if selected == "🏡Home":
+    
+    st.title(":blue[BizCardX: Extracting Business Card Data with OCR]")
+
     col1,col2,col3 =st.columns(3)
     with col2:
        st.image("/content/5.png")
-    st.title(":blue[BizCardX: Extracting Business Card Data with OCR]")
-    st.subheader(":red[**Technologies**]")
-    st.write("------------------------------------------------")
-    st.markdown("👉 Python")
-    st.write("Python is a computer programming language often used to build websites and software, automate tasks, and analyze data.")
-    st.markdown("👉 EasyOCR")
-    st.write("EasyOCR is a Python computer language Optical Character Recognition (OCR) module that is both flexible and easy to use. OCR technology is useful for a variety of tasks, including data entry automation and image analysis. It enables computers to identify and extract text from photographs or scanned documents.")
-    st.markdown("👉 Streamlit")
-    st.write("Streamlit is a promising open-source Python library, which enables developers to build attractive user interfaces in no time.")
-    st.markdown("👉 Sqlite3")
-    st.write("A standalone command-line shell program called sqlite3 is provided in SQLite's distribution. It can be used to create a database, define tables, insert and change rows, run queries and manage an SQLite database file. ")
-    st.markdown("👉 Pandas")
-    st.write("Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.")
-    st.write("------------------------------------------------")
+    
     st.subheader(":green[**Outline**]")
     st.write("-------------------------------------------------")
     st.markdown("🟩 In this streamlit web app you can upload an image of a business card and extract relevant information from it using easyOCR")
@@ -177,22 +166,38 @@ if selected == "🌏Data Management":
             st.success("⚠Card Data Deleted")
 
 
-if selected == "🙏My-Profile":
-    name = "Rajalakshmi N"
-    mail = (f'{"Mail :"}  {"rajinandagopal02@gmail.com"}')
-    description = "An Aspiring DATA-SCIENTIST..!"
-    social_media = {
-        "GITHUB": "https://github.com/RajiNandagopal",
-        "LINKEDIN": "www.linkedin.com/in/rajalakshmi-nandagopal-2ba0b416a"}
+if selected == "🙏 About":
 
-    col1, col2 = st.columns(2)
-    with col2:
-        st.title('Insights, What I learn from this Project')
-        st.write("")
-        st.write("---")
-        st.subheader(mail)
-    st.write("#")
-    cols = st.columns(len(social_media))
-    for index, (platform, link) in enumerate(social_media.items()):
-        cols[index].write(f"[{platform}]({link})")
+  name = "Rajalakshmi N"
+  mail = (f'{"Mail :"}  {"rajinandagopal02@gmail.com"}')
+  description = "An Aspiring DATA-SCIENTIST..!"
+  social_media = {
+      "GITHUB": "https://github.com/RajiNandagopal",
+      "LINKEDIN": "https://www.linkedin.com/in/rajalakshmi-nandagopal-2ba0b416a/"}
+
+  col1, col2 = st.columns(2)
+  with col1:
+      st.title('Insights, What I learn from this Project')
+      st.write("")
+      st.write("---")
+      st.subheader(mail)
+  st.write("#")
+  cols = st.columns(len(social_media))
+  for index, (platform, link) in enumerate(social_media.items()):
+      cols[index].write(f"[{platform}]({link})")
+
+   
+  st.subheader(":red[**Technologies**]")
+  st.write("------------------------------------------------")
+  st.markdown("👉 Python")
+  st.write("Python is a computer programming language often used to build websites and software, automate tasks, and analyze data.")
+  st.markdown("👉 EasyOCR")
+  st.write("EasyOCR is a Python computer language Optical Character Recognition (OCR) module that is both flexible and easy to use. OCR technology is useful for a variety of tasks, including data entry automation and image analysis. It enables computers to identify and extract text from photographs or scanned documents.")
+  st.markdown("👉 Streamlit")
+  st.write("Streamlit is a promising open-source Python library, which enables developers to build attractive user interfaces in no time.")
+  st.markdown("👉 Sqlite3")
+  st.write("A standalone command-line shell program called sqlite3 is provided in SQLite's distribution. It can be used to create a database, define tables, insert and change rows, run queries and manage an SQLite database file. ")
+  st.markdown("👉 Pandas")
+  st.write("Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.")
+  st.write("------------------------------------------------")
 
